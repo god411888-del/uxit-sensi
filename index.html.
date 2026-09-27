@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#070709">
+<title>UXIT SENSI PREMIUM</title>
+<style>
+:root{--red:#eb1930;--bg:#070709;--card:#17171d;--card2:#211016;--text:#f7f7f8;--muted:#a7a7b0;--line:#2b2b32}
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:var(--bg);color:var(--text);font-family:Arial,Helvetica,sans-serif}
+body{padding-bottom:88px}.glow{position:fixed;pointer-events:none;border-radius:50%;filter:blur(70px);opacity:.18}.g1{width:260px;height:260px;right:-120px;top:120px;background:#d71931}.g2{width:260px;height:260px;left:-150px;bottom:40px;background:#8d0d1d}
+.topbar{height:80px;border-bottom:1px solid #202027;background:rgba(7,7,9,.94);display:flex;align-items:center;justify-content:space-between;padding:0 25px;position:sticky;top:0;z-index:20}
+.brand{display:flex;align-items:center;gap:13px;color:inherit;text-decoration:none}.brand b{width:58px;height:58px;border-radius:15px;background:var(--red);display:grid;place-items:center;font-size:25px}.brand strong{display:block;font-size:20px;letter-spacing:1px}.brand small{display:block;color:#8d8d96;font-size:9px;letter-spacing:3px;margin-top:3px}
+.menu{width:58px;height:58px;border:1px solid #2b2b32;border-radius:16px;background:#15151a;color:#aaa;font-size:25px}
+main{max-width:760px;margin:auto}.view{display:none;padding:40px 25px 20px}.view.active{display:block}
+.hero{padding-top:45px}.badge{display:inline-block;border:1px solid #64101d;background:#16090d;color:#f06475;border-radius:30px;padding:13px 18px;font-size:13px;font-weight:700;letter-spacing:1.5px}
+h1{font-size:58px;line-height:.95;letter-spacing:-3px;margin:30px 0 22px}h1 em{font-style:normal;color:var(--red)}p{color:var(--muted);font-size:18px;line-height:1.7;margin:0 0 28px}
+.primary,.secondary{border:0;border-radius:15px;padding:18px 25px;font-size:16px;font-weight:800;cursor:pointer}.primary{background:var(--red);color:#fff;box-shadow:0 12px 28px rgba(235,25,48,.18)}.secondary{background:#19191f;color:#fff;border:1px solid #303039}.wide{width:100%}
+.features{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:40px}.features div{min-height:130px;border:1px solid #2a2a31;border-radius:20px;background:linear-gradient(145deg,#19191f,#121217);padding:25px;font-size:30px}.features b{display:block;font-size:15px;margin-top:28px}
+.notice{margin-top:16px;padding:22px;border-left:4px solid var(--red);border-radius:0 15px 15px 0;background:#19070b;color:#aaa;line-height:1.6}.notice b{color:#f15a6c;font-size:12px;letter-spacing:2px}
+.head{display:flex;gap:15px;align-items:center;margin-bottom:22px}.head small,.panel>label,.panel-title small,.dpi small{color:#e85a6b;font-weight:800;letter-spacing:1.5px;font-size:11px}.head h2{margin:4px 0;font-size:28px}.back{width:46px;height:46px;border-radius:13px;background:#17171d;border:1px solid #303039;color:#fff;font-size:24px}
+.panel{background:#141419;border:1px solid #292930;border-radius:18px;padding:20px;margin-bottom:15px}.panel>label{display:block;margin:0 0 8px}.panel select{width:100%;background:#0e0e12;color:#fff;border:1px solid #34343d;border-radius:12px;padding:14px;margin:0 0 18px;font-size:15px}.muted{color:var(--muted);font-size:14px;line-height:1.6}
+.panel-title{display:flex;align-items:center;justify-content:space-between;gap:12px}.panel-title h3{margin:5px 0 15px}.copy-small{background:#281017;color:#ff7a88;border:1px solid #651525;border-radius:9px;padding:9px;font-size:10px;font-weight:800}
+.srow{display:flex;justify-content:space-between;padding:15px 0;border-top:1px solid #292930}.srow strong{color:#ff5266;font-size:18px}
+.dpi{display:flex;justify-content:space-between;align-items:center;background:linear-gradient(135deg,#250a10,#120d10);border:1px solid #53121d;border-radius:18px;padding:20px;margin-bottom:15px}.dpi strong{display:block;font-size:30px;margin-top:5px}.dpi span{color:#aaa;font-size:12px}
+.checks label{display:block;padding:12px 0;color:#ccc}.actions{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.trow{display:flex;justify-content:space-between;margin-top:18px}.trow output{color:#ff5266;font-weight:800}input[type=range]{width:100%;accent-color:var(--red);margin:10px 0 8px}
+nav{position:fixed;z-index:30;bottom:0;left:0;right:0;height:82px;background:rgba(10,10,14,.98);border-top:1px solid #27272e;display:grid;grid-template-columns:repeat(4,1fr)}nav button{border:0;background:none;color:#777;font-size:22px}nav button span{display:block;font-size:11px;margin-top:6px;font-weight:700}nav button.active{color:#ff4c60}
+#toast{position:fixed;z-index:50;left:50%;bottom:100px;transform:translate(-50%,15px);opacity:0;pointer-events:none;background:#24242b;color:#fff;padding:12px 17px;border-radius:12px;transition:.2s}#toast.show{opacity:1;transform:translate(-50%,0)}
+@media(min-width:700px){.view{padding-left:40px;padding-right:40px}h1{font-size:76px}}
+</style>
+</head>
+<body>
+<div class="glow g1"></div><div class="glow g2"></div>
+<header class="topbar">
+<a class="brand" href="#" onclick="UXIT.go('home');return false"><b>U</b><span><strong>UXIT</strong><small>SENSI PREMIUM</small></span></a>
+<button class="menu" onclick="UXIT.toast('Use the navigation below')">☰</button>
+</header>
+
+<main>
+<section id="homeView" class="view active">
+<div class="hero">
+<span class="badge">⚡ 2026 SENSITIVITY COMPANION</span>
+<h1>Find your<br><em>perfect drag.</em></h1>
+<p>Choose your device and get a clean starting sensitivity, DPI recommendation and phone setup.</p>
+<button class="primary" onclick="UXIT.go('config')">START NOW <span>→</span></button>
+</div>
+<div class="features">
+<div>🎯<b>Device configs</b></div><div>⚡<b>Drag profiles</b></div>
+<div>📋<b>One-tap copy</b></div><div>⚙️<b>Phone setup</b></div>
+</div>
+<div class="notice"><b>UXIT TIP</b><br>Use these values as a starting point and fine-tune them for your own touch response.</div>
+</section>
+
+<section id="configView" class="view">
+<div class="head"><button class="back" onclick="UXIT.go('home')">←</button><div><small>PREMIUM CONFIG</small><h2>Your setup</h2></div></div>
+<div class="panel">
+<label>DEVICE</label><select id="deviceSelect"></select>
+<label>PROFILE</label><select id="profileSelect"><option value="balanced">Balanced</option><option value="fast">Fast Drag</option><option value="precise">Precise Drag</option><option value="custom">Custom</option></select>
+<div id="deviceInfo" class="muted"></div>
+</div>
+<div class="panel">
+<div class="panel-title"><div><small>SENSITIVITY</small><h3 id="configTitle">Balanced</h3></div><button class="copy-small" onclick="UXIT.copyAll()">COPY ALL</button></div>
+<div id="sensitivityList"></div>
+</div>
+<div class="dpi"><div><small>RECOMMENDED DPI</small><strong id="dpiValue">400–450</strong></div><span>Starting range</span></div>
+<div class="panel"><div class="panel-title"><div><small>PHONE SETTINGS</small><h3>Optimization checklist</h3></div></div>
+<div class="checks">
+<label><input type="checkbox"> Game mode / Game Space ON</label>
+<label><input type="checkbox"> Battery saver OFF while playing</label>
+<label><input type="checkbox"> High FPS enabled when available</label>
+<label><input type="checkbox"> Close heavy background apps</label>
+<label><input type="checkbox"> Keep screen/touch response clean</label>
+</div></div>
+<div class="actions"><button class="primary" onclick="UXIT.copyAll()">📋 COPY CONFIG</button><button class="secondary" onclick="UXIT.share()">↗ SHARE</button></div>
+</section>
+
+<section id="tunerView" class="view">
+<div class="head"><button class="back" onclick="UXIT.go('home')">←</button><div><small>AIM TUNER</small><h2>Fine tune</h2></div></div>
+<div class="panel"><p class="muted">Adjust these after testing your current setup. This does not modify Free Fire automatically.</p>
+<div class="trow"><span>General</span><output id="tGeneralOut">198</output></div><input id="tGeneral" type="range" min="0" max="200" value="198">
+<div class="trow"><span>Red Dot</span><output id="tRedOut">192</output></div><input id="tRed" type="range" min="0" max="200" value="192">
+<div class="trow"><span>2X Scope</span><output id="t2xOut">185</output></div><input id="t2x" type="range" min="0" max="200" value="185">
+</div><button class="primary wide" onclick="UXIT.saveTuner()">SAVE TUNED VALUES</button>
+</section>
+
+<section id="aboutView" class="view">
+<div class="head"><button class="back" onclick="UXIT.go('home')">←</button><div><small>ABOUT</small><h2>UXIT SENSI</h2></div></div>
+<div class="panel"><h3>Premium sensitivity companion</h3><p class="muted">UXIT SENSI provides device-based starting recommendations for Free Fire. Results can vary with touch response, display settings, game updates and personal play style.</p><p class="muted">No game files are modified and no automatic aiming or cheating functionality is included.</p></div>
+</section>
+</main>
+
+<nav>
+<button id="navHome" class="active" onclick="UXIT.go('home')">⌂<span>Home</span></button>
+<button id="navConfig" onclick="UXIT.go('config')">🎯<span>Config</span></button>
+<button id="navTuner" onclick="UXIT.go('tuner')">⚙<span>Tuner</span></button>
+<button id="navAbout" onclick="UXIT.go('about')">●<span>About</span></button>
+</nav>
+<div id="toast"></div>
+
+<script>
+(function(){
+'use strict';
+const D={
+'Auto Detect':{info:'Choose your phone for a more specific starting point.',dpi:'400–450',s:[195,190,184,178,118,164]},
+'Custom Device':{info:'Use the profile as a starting point and tune it.',dpi:'400–450',s:[195,190,184,178,115,160]},
+'Samsung Galaxy A05':{info:'4 GB RAM class • entry-level Samsung setup.',dpi:'400–440',s:[194,189,183,177,116,162]},
+'Samsung Galaxy A06':{info:'4 GB RAM class • entry-level Samsung setup.',dpi:'400–440',s:[196,191,184,178,116,163]},
+'Samsung Galaxy A50':{info:'4 GB RAM • AMOLED • responsive touch starting point.',dpi:'420–450',s:[197,191,185,179,118,165]},
+'Tecno Spark 30C':{info:'6 GB RAM class • balanced touch starting point.',dpi:'400–440',s:[198,192,186,180,120,166]},
+'Tecno Pova 4 Pro':{info:'Gaming-focused device • higher touch-response starting point.',dpi:'420–460',s:[198,193,186,180,120,166]},
+'Xiaomi Redmi 13C':{info:'Budget Xiaomi setup • balanced DPI range.',dpi:'400–440',s:[196,191,185,179,116,164]},
+'Xiaomi Redmi A3':{info:'Budget Xiaomi setup • smooth starting configuration.',dpi:'400–440',s:[194,189,183,177,114,162]},
+'Xiaomi Redmi A5':{info:'8 GB RAM class • smooth high-value starting setup.',dpi:'400–450',s:[197,192,186,180,118,165]},
+'OPPO A53':{info:'Balanced OPPO setup for drag practice.',dpi:'400–440',s:[195,190,184,178,116,163]},
+'vivo Y21D':{info:'Balanced vivo starting configuration.',dpi:'400–440',s:[195,190,184,178,116,163]},
+'iPhone 11':{info:'iOS touch response • use the values as a starting point.',dpi:'Default / no DPI change',s:[190,185,180,174,112,158]},
+'iPhone 16':{info:'iOS touch response • use the values as a starting point.',dpi:'Default / no DPI change',s:[192,187,182,176,114,160]}
+};
+const L=['General','Red Dot','2X Scope','4X Scope','Sniper','Free Look'];
+const P={balanced:{n:'Balanced',d:[0,0,0,0,0,0]},fast:{n:'Fast Drag',d:[3,2,1,0,2,1]},precise:{n:'Precise Drag',d:[-7,-6,-6,-6,-6,-6]},custom:{n:'Custom',d:[0,0,0,0,-3,-4]}};
+const $=id=>document.getElementById(id);
+function safeGet(k,f){try{return localStorage.getItem(k)||f}catch(e){return f}}
+function go(v){
+['home','config','tuner','about'].forEach(x=>{const e=$(x+'View');if(e)e.classList.toggle('active',x===v)});
+['Home','Config','Tuner','About'].forEach(x=>{const e=$('nav'+x);if(e)e.classList.toggle('active',x.toLowerCase()===v)});
+if(v==='config') render(); window.scrollTo(0,0);
+}
+function toast(m){const e=$('toast');e.textContent=m;e.classList.add('show');setTimeout(()=>e.classList.remove('show'),1600)}
+function render(){
+const name=$('deviceSelect').value||'Auto Detect', key=$('profileSelect').value||'balanced', b=D[name]||D['Auto Detect'], p=P[key]||P.balanced;
+$('deviceInfo').textContent=b.info;$('dpiValue').textContent=b.dpi;$('configTitle').textContent=p.n;
+$('sensitivityList').innerHTML=L.map((x,i)=>'<div class="srow"><span>'+x+'</span><strong>'+Math.max(0,Math.min(200,b.s[i]+p.d[i]))+'</strong></div>').join('');
+}
+function text(){
+const name=$('deviceSelect').value,key=$('profileSelect').value,b=D[name],p=P[key];
+return 'UXIT SENSI PREMIUM\nDevice: '+name+'\nProfile: '+p.n+'\n\n'+L.map((x,i)=>x+': '+(b.s[i]+p.d[i])).join('\n')+'\nDPI: '+b.dpi;
+}
+async function copyAll(){
+try{await navigator.clipboard.writeText(text());toast('Config copied ✓')}
+catch(e){const a=document.createElement('textarea');a.value=text();document.body.appendChild(a);a.select();document.execCommand('copy');a.remove();toast('Config copied ✓')}
+}
+function share(){if(navigator.share)navigator.share({title:'UXIT SENSI PREMIUM',text:text(),url:location.href}).catch(()=>{});else copyAll()}
+function saveTuner(){try{localStorage.setItem('uxit-tuner',JSON.stringify({g:$('tGeneral').value,r:$('tRed').value,x:$('t2x').value}))}catch(e){}toast('Tuned values saved ✓')}
+function init(){
+const s=$('deviceSelect');Object.keys(D).forEach(n=>{const o=document.createElement('option');o.value=n;o.textContent=n;s.appendChild(o)});
+s.value=safeGet('uxit-device','Auto Detect');$('profileSelect').value=safeGet('uxit-profile','balanced');
+s.onchange=()=>{try{localStorage.setItem('uxit-device',s.value)}catch(e){}render()};
+$('profileSelect').onchange=()=>{try{localStorage.setItem('uxit-profile',$('profileSelect').value)}catch(e){}render()};
+[['tGeneral','tGeneralOut'],['tRed','tRedOut'],['t2x','t2xOut']].forEach(([a,b])=>$(a).oninput=()=>$(b).value=$(a).value);
+render();
+}
+window.UXIT={go,toast,copyAll,share,saveTuner};
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
+})();
+</script>
+</body>
+</html>
