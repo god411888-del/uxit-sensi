@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#070709">
+<meta name="description" content="UXIT SENSI Premium Free Fire sensitivity companion">
+<title>UXIT SENSI PREMIUM</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="glow g1"></div><div class="glow g2"></div>
+<header class="topbar">
+<a class="brand" href="#" data-view="home"><b>U</b><span><strong>UXIT</strong><small>SENSI PREMIUM</small></span></a>
+<button class="menu" id="menuBtn">☰</button>
+</header>
+
+<main>
+<section id="homeView" class="view active">
+<div class="hero">
+<span class="badge">⚡ 2026 SENSITIVITY COMPANION</span>
+<h1>Find your<br><em>perfect drag.</em></h1>
+<p>Choose your device and get a clean starting sensitivity, DPI recommendation and phone setup.</p>
+<button class="primary" id="startBtn">START NOW <span>→</span></button>
+</div>
+<div class="features">
+<div>🎯<b>Device configs</b></div><div>⚡<b>Drag profiles</b></div>
+<div>📋<b>One-tap copy</b></div><div>⚙️<b>Phone setup</b></div>
+</div>
+<div class="notice"><b>UXIT TIP</b><br>Use these values as a starting point and fine-tune them for your own touch response.</div>
+</section>
+
+<section id="configView" class="view">
+<div class="head"><button class="back" data-view="home">←</button><div><small>PREMIUM CONFIG</small><h2>Your setup</h2></div></div>
+<div class="panel">
+<label>DEVICE</label><select id="deviceSelect"></select>
+<label>PROFILE</label><select id="profileSelect">
+<option value="balanced">Balanced</option><option value="fast">Fast Drag</option>
+<option value="precise">Precise Drag</option><option value="custom">Custom</option>
+</select>
+<div id="deviceInfo" class="muted"></div>
+</div>
+<div class="panel">
+<div class="panel-title"><div><small>SENSITIVITY</small><h3 id="configTitle">Fast Drag</h3></div><button class="copy-small" id="copyAllBtn">COPY ALL</button></div>
+<div id="sensitivityList"></div>
+</div>
+<div class="dpi"><div><small>RECOMMENDED DPI</small><strong id="dpiValue">420</strong></div><span>Starting range</span></div>
+<div class="panel">
+<div class="panel-title"><div><small>PHONE SETTINGS</small><h3>Optimization checklist</h3></div></div>
+<div class="checks">
+<label><input type="checkbox"> Game mode / Game Space ON</label>
+<label><input type="checkbox"> Battery saver OFF while playing</label>
+<label><input type="checkbox"> High FPS enabled when available</label>
+<label><input type="checkbox"> Close heavy background apps</label>
+<label><input type="checkbox"> Keep screen/touch response clean</label>
+</div>
+</div>
+<div class="actions"><button class="primary" id="copyConfigBtn">📋 COPY CONFIG</button><button class="secondary" id="shareBtn">↗ SHARE</button></div>
+</section>
+
+<section id="tunerView" class="view">
+<div class="head"><button class="back" data-view="config">←</button><div><small>AIM TUNER</small><h2>Fine tune</h2></div></div>
+<div class="panel"><p class="muted">Adjust these after testing your current setup. This does not modify Free Fire automatically.</p>
+<div class="trow"><span>General</span><output id="tGeneralOut">198</output></div><input id="tGeneral" type="range" min="0" max="200" value="198">
+<div class="trow"><span>Red Dot</span><output id="tRedOut">192</output></div><input id="tRed" type="range" min="0" max="200" value="192">
+<div class="trow"><span>2X Scope</span><output id="t2xOut">185</output></div><input id="t2x" type="range" min="0" max="200" value="185">
+</div>
+<button class="primary wide" id="saveTunerBtn">SAVE TUNED VALUES</button>
+</section>
+
+<section id="aboutView" class="view">
+<div class="head"><button class="back" data-view="home">←</button><div><small>ABOUT</small><h2>UXIT SENSI</h2></div></div>
+<div class="panel"><h3>Premium sensitivity companion</h3>
+<p class="muted">UXIT SENSI provides device-based starting recommendations for Free Fire. Results can vary with touch response, display settings, game updates and personal play style.</p>
+<p class="muted">No game files are modified and no automatic aiming or cheating functionality is included.</p></div>
+</section>
+</main>
+
+<nav>
+<button class="nav active" data-view="home">⌂<span>Home</span></button>
+<button class="nav" data-view="config">🎯<span>Config</span></button>
+<button class="nav" data-view="tuner">⚙<span>Tuner</span></button>
+<button class="nav" data-view="about">●<span>About</span></button>
+</nav>
+<div id="toast">Copied!</div>
+<script src="script.js"></script>
+</body>
+</html>
